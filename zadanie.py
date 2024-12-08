@@ -23,3 +23,15 @@ iterator = iter(numbers)
 
 for i in numbers:
     print(next(iterator) ** 2)
+
+#4
+def generate_numbers():
+    for i in range(1, 6):
+        yield i ** 2
+
+gen = generate_numbers()
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))

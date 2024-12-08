@@ -36,20 +36,39 @@
 # for count in counter:
 #     print(count)
 
-def generate_numbers():
-    for i in range(5):
-        yield i
+# def generate_numbers():
+#     for i in range(5):
+#         yield i #yield делает функцию генератором
 
-def generate_numbers2():
-    for i in range(5):
-        return i
+# #Вместо того чтобы возвращать все сразу, генератор возвращает по одному элементу
+
+# def generate_numbers2():
+#     for i in range(5):
+#         return i
     
-print(generate_numbers2())
+# print(generate_numbers2())
 
-gen = generate_numbers()
+# gen = generate_numbers()
 
-print(next(gen))
-print(next(gen))
-print(next(gen))
-print(next(gen))
-print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+
+# Декораторы
+
+def decorator(func):
+    def wrapper():
+        print("Это до вызова функций")
+        func()
+        print("После вызова функций")
+    return wrapper()
+
+@decorator
+def say_hello():
+    print("Привет")
+
+@decorator
+def add():
+    print(5+5)
