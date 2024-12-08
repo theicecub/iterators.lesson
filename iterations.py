@@ -16,22 +16,40 @@
 # print(next(iterator))
 # print(next(iterator)) no more than 10
 
-class Counter:
-    def __init__(self, max_number):
-        self.i=0
-        self.max_number=max_number
+# class Counter:
+#     def __init__(self, max_number):
+#         self.i=0
+#         self.max_number=max_number
 
-    def __iter__(self):
-        self.i=0
-        return self
+#     def __iter__(self):
+#         self.i=0
+#         return self
     
-    def __next__(self):
-        self.i += 1
-        if self.i > self.max_number:
-            raise StopIteration
-        return self.i
+#     def __next__(self):
+#         self.i += 1
+#         if self.i > self.max_number:
+#             raise StopIteration
+#         return self.i
     
-counter = Counter(10)
+# counter = Counter(10)
 
-for count in counter:
-    print(count)
+# for count in counter:
+#     print(count)
+
+def generate_numbers():
+    for i in range(5):
+        yield i
+
+def generate_numbers2():
+    for i in range(5):
+        return i
+    
+print(generate_numbers2())
+
+gen = generate_numbers()
+
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
